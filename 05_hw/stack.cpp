@@ -67,6 +67,7 @@ Node *Stack::searchByValue(int value)
 
 Node *Stack::searchByIndex(int index)
 {
+    if (index < 0){return nullptr;}
     Node *current = this->top;
     for (int i = 0; current != nullptr; i++)
     {
