@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 project(stack)
 find_package(GTest REQUIRED)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fno-omit-frame-pointer -O3")
+
 add_library(stack stack.cpp)
 add_executable(main main.cpp)
 target_link_libraries(main stack)
